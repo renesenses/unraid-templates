@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Tune</Name>
+  <Maintainer><Name>MozAIk Labs</Name><Email>bertrand@mozaiklabs.fr</Email></Maintainer>
+  <Repository>renesenses/tune:latest</Repository>
+  <TemplateURL>https://raw.githubusercontent.com/renesenses/unraid-templates/main/templates/tune.xml</TemplateURL>
+  <Registry>https://hub.docker.com/r/renesenses/tune</Registry>
+  <Network>host</Network>
+  <Privileged>false</Privileged>
+  <Support>https://mozaiklabs.fr/forum</Support>
+  <Project>https://mozaiklabs.fr</Project>
+  <Overview>Tune is a self-hosted multi-room music server. It indexes your local library (FLAC, DSD...), brings in Qobuz, Tidal and Deezer, and plays bit-perfect to DLNA/UPnP renderers, Chromecast, AirPlay and Squeezebox players from a web interface on port 8888. Host networking is required for device discovery.</Overview>
+  <Category>MediaServer:Music</Category>
+  <WebUI>http://[IP]:[PORT:8888]/</WebUI>
+  <Icon>https://mozaiklabs.fr/logo_centered_hd.png</Icon>
+  <Config Name="Music" Target="/music" Default="/mnt/user/music" Mode="ro" Description="Your music library (read-only)." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/music</Config>
+  <Config Name="Data" Target="/data" Default="/mnt/user/appdata/tune" Mode="rw" Description="Tune database, settings and artwork cache." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/tune</Config>
+  <Config Name="Scan on startup" Target="TUNE_AUTO_SCAN" Default="true" Mode="" Description="Scan the library when the container starts." Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
+</Container>
